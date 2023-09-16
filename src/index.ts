@@ -1,12 +1,16 @@
-import 'graphql-import-node';
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 import { typeDefs } from "./typeDefs.js";
 
-const books = [
+type Book = {
+  title: string,
+  author: string,
+}
+
+const books: Book[] = [
   {
-    title: "The Awakening", 
+    title: "The Awakening",
     author: "Kate Chopin",
   },
   {
@@ -15,9 +19,17 @@ const books = [
   },
 ];
 
-const resolvers = {
+const resolvers =  {
   Query: {
-    books: () => books,
+    books: (): Book[] => books,
+  },
+  Mutation: { 
+    addBook: (_, { title, author}): Book => {
+      const book = { title, author }
+      books.push({ title, author })
+
+      return book
+    }
   },
 };
 

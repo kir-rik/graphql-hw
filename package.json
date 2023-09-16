@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "@types/node": "^20.6.2",
-    "graphql-import-node": "^0.0.5",
     "typescript": "^5.2.2"
   }
 }
