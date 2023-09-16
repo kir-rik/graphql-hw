@@ -1,0 +1,22 @@
+{
+  "name": "graphql-hw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kir-rik/graphql-hw.git",
+  "author": "Kirill Ponomarenko <k.ponomarenko@tinkoff.ru>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc",
+    "start": "yarn compile && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.3",
+    "graphql": "^16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "graphql-import-node": "^0.0.5",
+    "typescript": "^5.2.2"
+  }
+}
